@@ -13,10 +13,12 @@ const app: Application = express();
 app.use(cors());
 app.use(express.json());
 
-
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/api", routes);
+
+
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   const error = new ApiError(404, `Not found - ${req.originalUrl}`);
