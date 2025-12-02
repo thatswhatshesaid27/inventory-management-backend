@@ -1,0 +1,14 @@
+{
+  "workspace": {
+    "id": "4c2b4eed-59f3-4d1f-89c8-eddb8e2c4d96"
+  },
+  "entities": {
+    "collections": [
+      "..\\postman\\collections\\REST API basics: CRUD, test & variable.postman_collection.json"
+    ],
+    "environments": [],
+    "specs": [],
+    "flows": [],
+    "globals": []
+  }
+}

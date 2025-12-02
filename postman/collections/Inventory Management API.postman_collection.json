@@ -1,0 +1,389 @@
+{
+  "info": {
+    "_postman_id": "b32f27f3-a788-47cc-9217-76952b1b34ee",
+    "name": "Inventory Management API",
+    "description": "A comprehensive API collection for managing inventory with products, categories, and authentication",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "employee",
+      "item": [
+        {
+          "name": "Create employee",
+          "id": "05f3fc0b-9c43-4680-80e0-c40bcc44f147",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sample Product\",\n  \"description\": \"Product description\",\n  \"price\": 29.99,\n  \"quantity\": 100,\n  \"categoryId\": \"cat123\",\n  \"sku\": \"PROD-001\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            },
+            "description": "Add a new product to the inventory"
+          }
+        },
+        {
+          "name": "Get All employee",
+          "id": "e2e77c4d-8191-48bc-b2db-83a11f438f93",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            },
+            "description": "Retrieve all products in the inventory"
+          }
+        },
+        {
+          "name": "Get Product by ID",
+          "id": "8d6d1a80-b637-4859-887d-b94b48cb2e3a",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "{{productId}}"
+              ]
+            },
+            "description": "Retrieve a specific product by its ID"
+          }
+        },
+        {
+          "name": "Update Product",
+          "id": "7832e75d-d37d-4f83-a1fb-36b4d1bb544f",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Product Name\",\n  \"description\": \"Updated description\",\n  \"price\": 34.99,\n  \"quantity\": 150\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "{{productId}}"
+              ]
+            },
+            "description": "Update an existing product's details"
+          }
+        },
+        {
+          "name": "Delete Product",
+          "id": "df20a2cc-7f38-4c1a-b93c-b44aec4e6097",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "{{productId}}"
+              ]
+            },
+            "description": "Remove a product from the inventory"
+          }
+        }
+      ],
+      "id": "c67478f9-5463-42dd-9f38-8ac9f94b9feb",
+      "description": "Endpoints for managing product inventory"
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Create Category",
+          "id": "979aad72-6aaa-458b-9147-89e8a2e18704",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Electronics\",\n  \"description\": \"Electronic products and accessories\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            },
+            "description": "Add a new product category"
+          }
+        },
+        {
+          "name": "Get All Categories",
+          "id": "95c6d574-e141-4f91-8568-355c15ae28dc",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            },
+            "description": "Retrieve all product categories"
+          }
+        },
+        {
+          "name": "Update Category",
+          "id": "133d3d92-346e-4f53-b349-de242750771d",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Category Name\",\n  \"description\": \"Updated category description\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/categories/{{categoryId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categories",
+                "{{categoryId}}"
+              ]
+            },
+            "description": "Update an existing category"
+          }
+        },
+        {
+          "name": "Delete Category",
+          "id": "a1f045b2-7433-428f-9a8c-5008ce49e1b1",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categories/{{categoryId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categories",
+                "{{categoryId}}"
+              ]
+            },
+            "description": "Remove a product category"
+          }
+        }
+      ],
+      "id": "5ceff8c2-d204-46f6-91bb-95ce091efcda",
+      "description": "Endpoints for managing product categories"
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "User Login",
+          "id": "85397706-3f6b-4e74-abfb-740c3ade4ed6",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "description": "Authenticate user and generate access token"
+          }
+        },
+        {
+          "name": "User Register",
+          "id": "e8a370c0-b8b4-4a48-a9f8-8e4c45357848",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"newuser@example.com\",\n  \"password\": \"password123\",\n  \"name\": \"John Doe\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "description": "Register a new user account"
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "id": "f6b282e2-6199-457c-902d-17f7c9eec9e8",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/refresh",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "refresh"
+              ]
+            },
+            "description": "Generate a new access token using refresh token"
+          }
+        }
+      ],
+      "id": "8007ad07-15bf-40b0-8035-b69337c8d927",
+      "description": "Endpoints for user authentication and authorization"
+    }
+  ],
+  "auth": {
+    "type": "basic"
+  },
+  "variable": [
+    {
+      "id": "a59b4eff-bdee-4d59-a4bf-ea5d57c405ee",
+      "key": "baseUrl",
+      "value": "http://localhost:3000/api"
+    },
+    {
+      "id": "dffb2c10-72ea-45c4-b61e-c8387b306fc0",
+      "key": "accessToken",
+      "value": ""
+    },
+    {
+      "id": "1fbafe5a-3af6-473b-97a2-6799d04542b8",
+      "key": "refreshToken",
+      "value": ""
+    },
+    {
+      "id": "76b14154-439e-48d1-aece-78f53ebe657c",
+      "key": "productId",
+      "value": ""
+    },
+    {
+      "id": "23303065-6de7-4fc7-a3fb-8bba8eb62a9a",
+      "key": "categoryId",
+      "value": ""
+    }
+  ]
+}
