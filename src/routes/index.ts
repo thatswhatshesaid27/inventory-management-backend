@@ -7,4 +7,6 @@ const router = Router();
 router.use("/users", userRoutes);
 router.use("/employees", employeeRoutes);
 
+console.log("📌 Routes index loaded");
+
 export default router;

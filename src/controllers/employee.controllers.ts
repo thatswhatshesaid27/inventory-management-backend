@@ -5,13 +5,15 @@ import { asyncHandler } from "../utils/asyncHandler";
 import { ApiError } from "../utils/ApiError";
 import { ApiResponse } from "../utils/ApiResponse";
 
-// 📌 GET all employees
+
+console.log("🔥 EMPLOYEE CONTROLLER FILE LOADED");
+
+
 export const getEmployees = asyncHandler(async (req: Request, res: Response) => {
   const employees = await EmployeeModel.find().populate("employeeId");
   return res.json(new ApiResponse(true, "Employees fetched", employees));
 });
 
-// 📌 GET employee by ID
 export const getEmployeeById = asyncHandler(async (req: Request, res: Response) => {
   const employee = await EmployeeModel.findById(req.params.id).populate("employeeId");
 
@@ -23,14 +25,17 @@ export const getEmployeeById = asyncHandler(async (req: Request, res: Response) 
   return res.json(new ApiResponse(true, "Employee fetched", employee));
 });
 
-// 📌 CREATE employee
+
 export const createEmployee = asyncHandler(async (req: Request, res: Response) => {
   const { email, employeeId } = req.body;
+
+    console.log("🚀 INSIDE createEmployee START");
+  console.log("BODY IS:", req.body);
 
   console.log("🔍 Received employeeId:", employeeId);
   console.log("📧 Received email:", email);
 
-  // Check if employee email already exists
+
   const existingEmployee = await EmployeeModel.findOne({ email });
   if (existingEmployee) {
     console.log("⚠️ Employee with email already exists");
