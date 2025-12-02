@@ -29,7 +29,7 @@ export const getEmployeeById = asyncHandler(async (req: Request, res: Response) 
 export const createEmployee = asyncHandler(async (req: Request, res: Response) => {
   const { email, employeeId } = req.body;
 
-    console.log("🚀 INSIDE createEmployee START");
+  console.log("🚀 INSIDE createEmployee START");
   console.log("BODY IS:", req.body);
 
   console.log("🔍 Received employeeId:", employeeId);

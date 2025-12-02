@@ -23,7 +23,7 @@ export const getUserById = asyncHandler(async (req: Request, res: Response) => {
 
 export const createUser = asyncHandler(async (req: Request, res: Response) => {
   const { name, email, role } = req.body;
-
+  console.log("🚀 INSIDE createUser START");
   const existing = await UserModel.findOne({ email });
   if (existing) {
     throw new ApiError(400, "Email already exists");
