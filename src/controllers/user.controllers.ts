@@ -22,14 +22,14 @@ export const getUserById = asyncHandler(async (req: Request, res: Response) => {
 
 
 export const createUser = asyncHandler(async (req: Request, res: Response) => {
-  const { name, email, role } = req.body;
+  const { name, email, password, role } = req.body;
   console.log("🚀 INSIDE createUser START");
   const existing = await UserModel.findOne({ email });
   if (existing) {
     throw new ApiError(400, "Email already exists");
   }
 
-  const user = await UserModel.create({name, email, role });
+  const user = await UserModel.create({name, email, password,  role });
 
   return res.status(201).json(new ApiResponse(true, "User created", user));
 });
