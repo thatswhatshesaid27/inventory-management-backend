@@ -6,6 +6,5 @@ export interface IUser {
   role: "admin" | "user";
   createdAt?: Date;
   updatedAt?: Date;
-
 }
 
