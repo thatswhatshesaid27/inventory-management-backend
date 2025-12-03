@@ -6,7 +6,7 @@ import { ApiError } from "../utils/ApiError";
 import { ApiResponse } from "../utils/ApiResponse";
 
 
-console.log("🔥 EMPLOYEE CONTROLLER FILE LOADED");
+
 
 
 export const getEmployees = asyncHandler(async (req: Request, res: Response) => {
@@ -21,7 +21,7 @@ export const getEmployeeById = asyncHandler(async (req: Request, res: Response) 
     throw new ApiError(404, "Employee not found");
   }
 
-  console.log("*********************Employee*********************", employee);
+  // console.log("*********************Employee*********************", employee);
   return res.json(new ApiResponse(true, "Employee fetched", employee));
 });
 

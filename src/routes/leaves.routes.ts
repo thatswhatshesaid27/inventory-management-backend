@@ -18,3 +18,5 @@ router.delete("/:id", deleteLeave);
 router.get("/employee/:id", getLeavesByEmployeeId);
 
 export default router;
+
+
