@@ -6,6 +6,7 @@ import leaveRoutes from "./leaves.routes";
 import projectRoutes from "./project.routes";
 import salaryRoutes from "./salary.routes";
 import conveyanceRoutes from "./conveyance.routes";
+import toolsRoutes from "./tools.routes";
 
 const router = Router();
 
@@ -16,6 +17,7 @@ router.use("/leaves", leaveRoutes);
 router.use("/projects", projectRoutes);
 router.use("/salaries", salaryRoutes);
 router.use("/conveyances", conveyanceRoutes);
+router.use("/tools", toolsRoutes);
 console.log("📌 Routes index loaded");
 
 export default router;
