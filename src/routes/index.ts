@@ -5,6 +5,7 @@ import login from "./login.routes";
 import leaveRoutes from "./leaves.routes";
 import projectRoutes from "./project.routes";
 import salaryRoutes from "./salary.routes";
+import conveyanceRoutes from "./conveyance.routes";
 
 const router = Router();
 
@@ -14,6 +15,7 @@ router.use("/auth", login);
 router.use("/leaves", leaveRoutes);
 router.use("/projects", projectRoutes);
 router.use("/salaries", salaryRoutes);
+router.use("/conveyances", conveyanceRoutes);
 console.log("📌 Routes index loaded");
 
 export default router;
