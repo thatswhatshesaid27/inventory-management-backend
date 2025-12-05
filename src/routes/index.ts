@@ -8,6 +8,7 @@ import salaryRoutes from "./salary.routes";
 import conveyanceRoutes from "./conveyance.routes";
 import toolsRoutes from "./tools.routes";
 import rulesRoutes from "./rules.routes";
+import attendanceRoutes from "./attendance.routes";
 
 const router = Router();
 
@@ -20,6 +21,7 @@ router.use("/salaries", salaryRoutes);
 router.use("/conveyances", conveyanceRoutes);
 router.use("/tools", toolsRoutes);
 router.use("/rules", rulesRoutes);
+router.use("/attendance", attendanceRoutes);
 console.log("📌 Routes index loaded");
 
 export default router;

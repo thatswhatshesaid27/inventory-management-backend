@@ -6,7 +6,7 @@ import { ApiError } from "../utils/ApiError";
 import { ApiResponse } from "../utils/ApiResponse";
 
 
-// ADD TOOL
+
 export const addTools = asyncHandler(async (req: Request, res: Response) => {
   const { toolName, category, serialNo, AssignedTo, IssuedDate, returnDate, condition } = req.body;
 
